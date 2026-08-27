@@ -106,6 +106,7 @@ For example:
 
 ```text
 rounded corners + shadow
+```
 
 does not automatically qualify as Claymorphism.
 
