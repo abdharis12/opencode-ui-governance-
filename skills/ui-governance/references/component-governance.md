@@ -5,7 +5,7 @@
 
 ```markdown
 # COMPONENT GOVERNANCE
-
+```
 ## Purpose
 
 This document defines universal rules for selecting, reusing, creating, modifying, and organizing UI components.
@@ -29,6 +29,7 @@ Feature Component
         ↓
 Page
 ```
+
 For a typical React project:
 ```text
 Radix UI
