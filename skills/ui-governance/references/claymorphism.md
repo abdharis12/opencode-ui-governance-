@@ -349,6 +349,7 @@ Clay background/surface
 Clay component
         ↓
 Optional floating glass layer
+```
 
 Glass should be used to communicate:
 
@@ -359,7 +360,7 @@ transient UI
 
 Do not convert the entire interface into transparent glass panels.
 
-16. COLOR
+# 16. COLOR
 
 Claymorphism does not define a specific color palette.
 
@@ -369,7 +370,7 @@ Pastel palettes are compatible with Claymorphism when configured, but they are n
 
 Color should reinforce material hierarchy rather than replace it.
 
-17. TYPOGRAPHY
+# 17. TYPOGRAPHY
 
 Typography remains controlled by the project's typography system.
 
@@ -387,7 +388,8 @@ hierarchy
 composition
 depth
 spacing
-18. SPACING
+
+# 18. SPACING
 
 Claymorphism benefits from comfortable spacing.
 
@@ -403,7 +405,8 @@ Avoid:
 cramped controls
 excessive surface nesting
 unnecessary whitespace that weakens information hierarchy
-19. COMPONENT DENSITY
+
+# 19. COMPONENT DENSITY
 
 Not every element needs strong Clay treatment.
 
@@ -436,7 +439,7 @@ utility elements
 
 This prevents the interface from becoming visually noisy.
 
-20. VISUAL BOUNDARIES
+# 20. VISUAL BOUNDARIES
 
 A Claymorphic interface should not become:
 
@@ -448,7 +451,7 @@ excessively playful
 
 Softness should coexist with professional hierarchy.
 
-21. MOTION
+# 21. MOTION
 
 Motion should reinforce tactile interaction.
 
@@ -468,7 +471,7 @@ animation for decoration alone
 
 Respect reduced-motion preferences.
 
-22. RESPONSIVE BEHAVIOR
+# 22. RESPONSIVE BEHAVIOR
 
 Claymorphism must remain usable across:
 
@@ -485,7 +488,7 @@ preserve hierarchy
 
 Do not allow shadows, blur, or floating effects to compromise usability.
 
-23. ACCESSIBILITY
+# 23. ACCESSIBILITY
 
 Claymorphism must never compromise:
 
@@ -498,7 +501,7 @@ accessible states
 
 A visual effect is invalid if it makes the interface harder to use.
 
-24. ANTI-PATTERNS
+# 24. ANTI-PATTERNS
 
 Avoid:
 
@@ -513,7 +516,8 @@ identical elevation on every component
 excessive blur
 decorative depth with no purpose
 visual effects that obscure content
-25. QUALITY TEST
+
+# 25. QUALITY TEST
 
 A successful Claymorphic interface should immediately communicate:
 
@@ -521,7 +525,7 @@ soft + tactile + sculpted + volumetric + matte
 
 If the interface still looks like a standard flat UI with rounded corners and shadows, the Claymorphism treatment is insufficient.
 
-26. DESIGN PRINCIPLE
+# 26. DESIGN PRINCIPLE
 
 Use Claymorphism to make the interface feel:
 
