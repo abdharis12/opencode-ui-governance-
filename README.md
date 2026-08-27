@@ -85,6 +85,7 @@ project-specific preferences
                     UI Auditor
                     
 # 4. REPOSITORY STRUCTURE
+```text
 opencode-ui-governance/
 │
 ├── skills/
@@ -105,7 +106,7 @@ opencode-ui-governance/
 │   └── ui-system.yaml
 │
 └── README.md
-
+```
 # 5. GLOBAL VS PROJECT
 
 The repository contains reusable global knowledge.
@@ -113,12 +114,12 @@ The repository contains reusable global knowledge.
 Projects should NOT copy all of this repository into their source code.
 
 A project only needs:
-
+```text
 project/
 ├── AGENTS.md
 ├── ui-system.yaml
 └── ...
-
+```
 # 6. PROJECT CONFIGURATION
 
 Copy:
