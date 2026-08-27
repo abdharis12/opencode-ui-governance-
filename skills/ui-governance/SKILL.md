@@ -1,399 +1,588 @@
 ---
-
 name: ui-governance
-description: Universal UI/UX governance system that reads a project's ui-system.yaml and applies its visual style, design tokens, component rules, UX principles, creativity level, and UI quality standards.
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+description: Universal UI/UX governance engine that reads a project's ui-system.yaml and applies its visual style, design tokens, component rules, UX principles, creative direction, references, and UI quality standards.
+---
 
 # UI GOVERNANCE
 
-You are working under a project-specific UI/UX governance system.
+You are operating under the project's UI/UX governance system.
 
-The project configuration is defined by:
+The project-specific UI/UX configuration is defined by:
 
 `ui-system.yaml`
 
-This file determines the active visual identity for the current project.
+This skill is universal and must work across different projects, frameworks, products, brands, and visual styles.
 
 ---
 
-# 1. CONFIGURATION FIRST
+# 1. PROJECT CONFIGURATION
 
 Before performing UI/UX work:
 
-1. Find `ui-system.yaml`.
-2. Read it.
-3. Identify the active visual style.
-4. Identify the secondary visual style.
-5. Read the configured color system.
-6. Read typography settings.
-7. Read layout settings.
-8. Read component foundation.
-9. Read creativity rules.
-10. Read reference pages when configured.
+1. Locate `ui-system.yaml` at the root of the current project/worktree.
+2. Read the file.
+3. Treat it as the project's UI/UX configuration source of truth.
+4. Determine the active visual style.
+5. Determine the secondary visual style.
+6. Read the project theme.
+7. Read typography configuration.
+8. Read layout configuration.
+9. Read component foundation.
+10. Read creativity configuration.
+11. Read UX requirements.
+12. Read configured reference pages.
+13. Read configured assets when relevant.
 
-Do not assume the visual style.
+Do not assume project-specific visual preferences.
 
 ---
 
-# 2. ACTIVE VISUAL STYLE
+# 2. MISSING CONFIGURATION
 
-The active visual style is controlled by:
+If `ui-system.yaml` does not exist:
+
+Do NOT invent a new project-specific design system.
+
+Instead:
+
+1. Inspect the existing project UI.
+2. Determine whether a UI/UX task can be safely completed using existing conventions.
+3. Do not invent project-specific colors, typography, visual language, or component conventions.
+4. Report that `ui-system.yaml` is missing when project-specific UI decisions are required.
+
+Do not silently create `ui-system.yaml` unless the user explicitly requests project UI configuration setup.
+
+---
+
+# 3. ACTIVE VISUAL STYLE
+
+The primary visual style is controlled by:
 
 `visual.style`
 
 Examples:
 
-* claymorphism
-* minimalist
-* editorial
-* corporate
-* glassmorphism
-* brutalist
-* custom
+- claymorphism
+- minimalist
+- editorial
+- corporate
+- brutalist
+- glassmorphism
+- custom
 
-The selected style must determine the visual direction of the implementation.
+Load the corresponding style reference from:
 
----
+`references/<style>.md`
 
-# 3. STYLE REFERENCES
-
-Style-specific guidance is located in:
-
-`references/`
-
-Load the reference corresponding to the active style.
-
-Examples:
+Example:
 
 ```text
-visual.style = claymorphism
-→ references/claymorphism.md
+visual.style: claymorphism
+↓
+references/claymorphism.md
 
-visual.style = minimalist
-→ references/minimalist.md
+The active style is mandatory.
 ```
+# 4. MISSING STYLE REFERENCE
+```text
+If:
 
-Do not apply multiple primary visual styles unless configured by the project.
+references/<style>.md
 
----
+does not exist:
 
-# 4. SECONDARY STYLE
+Do NOT silently substitute another style.
 
-The optional secondary style is controlled by:
+Report that the configured visual style reference is missing.
 
-`visual.secondary_style`
+Continue only using existing project UI conventions unless the user explicitly provides another design direction.
+```
+# 5. SECONDARY STYLE
+
+The optional secondary visual style is controlled by:
+
+visual.secondary_style
 
 Examples:
-
 ```text
 glassmorphism
 none
 ```
+The secondary style must support the primary style.
 
-The secondary style must never override the primary style.
+It must not silently replace the primary style.
 
 Example:
-
 ```text
 Primary:
 Claymorphism
 
 Secondary:
 Glassmorphism
-
-Result:
-Clay surfaces + selective glass layers
 ```
+Result:
+Claymorphism remains the dominant material.
+Glassmorphism is used only as a supporting layer.
 
----
+If the secondary style is not configured or is none, do not apply it.
 
-# 5. DESIGN TOKENS
-
-Read the theme configuration from:
-
-`ui-system.yaml`
-
-Use the configured:
-
-* colors
-* typography
-* spacing
-* radius
-* elevation
-* borders
-* shadows
-* motion
-
-Do not invent replacement values when tokens exist.
-
----
-
-# 6. CREATIVE FREEDOM
-
-Creativity is controlled by:
-
-`creative`
-
-The project may allow strong creative decisions.
-
-Creative decisions may include:
-
-* layout
-* composition
-* asymmetry
-* visual hierarchy
-* visual metaphor
-* spacing rhythm
-* typography scale
-* section composition
-* animation
-* signature visual elements
-
-Creative decisions must remain inside the configured visual system.
-
-Consistency does not mean identical layouts.
-
-Consistency means recognizable product identity.
-
----
-
-# 7. PRODUCT-SPECIFIC DESIGN
-
-Design according to the project's actual subject matter.
-
-Use the project's:
-
-* product
-* audience
-* domain
-* terminology
-* visual references
-* content
-
-Do not insert generic visual patterns merely because they are common.
-
----
-
-# 8. COMPONENT FOUNDATION
+# 6. PROJECT THEME
 
 Read:
 
-`components.foundation`
+theme
 
-Use the project's configured component foundation.
+Use the configured:
+```text
+colors
+typography
+spacing
+radius
+elevation
+motion
+component dimensions
+```
+These values represent the project's visual identity.
 
-For example:
+Do not invent replacements when configured values already exist.
 
-* shadcn
-* radix
-* native
-* custom
+# 7. CREATIVE DIRECTION
 
-When shadcn/ui is configured, prefer existing shadcn components.
+Read:
 
-When Radix is configured, preserve Radix behavior and accessibility.
+visual.creativity
 
----
+and:
 
-# 9. EXISTING COMPONENTS FIRST
+visual.personality
 
-Before creating a component:
+Creative freedom may be:
 
-1. Search the codebase.
-2. Search existing shared components.
-3. Search the project's component registry if provided.
-4. Determine whether the requirement can be satisfied by an existing component.
-5. Reuse or extend where appropriate.
+conservative
+moderate
+bold
+
+When creativity is enabled, the agent may make strong visual decisions involving:
+
+composition
+layout
+asymmetry
+hierarchy
+visual metaphor
+visual storytelling
+spacing rhythm
+typography scale
+interaction choreography
+animation
+signature elements
+
+Creative freedom does NOT permit changing the active visual system.
+
+# 8. DISTINCTIVE WITHIN THE SYSTEM
+
+Consistency does not mean identical page layouts.
+
+Pages may differ significantly when their purpose requires it.
+
+Consistency means maintaining:
+
+product identity
+design language
+color system
+typography system
+component language
+interaction language
+accessibility conventions
+
+The design principle is:
+
+Distinctive within the system.
+
+# 9. PRODUCT-SPECIFIC DESIGN
+
+Use the project's real subject matter as inspiration.
+
+Consider:
+
+product domain
+audience
+artifacts
+workflows
+terminology
+physical metaphors
+organizational context
+brand personality
+
+Prefer meaningful product-specific visual concepts over generic decorative elements.
+
+# 10. FRONTEND DESIGN
+
+When a major UI task requires creative design:
+
+Use the frontend-design principles defined in:
+
+references/frontend-design.md
+
+The purpose is to avoid generic AI-generated layouts and produce intentional visual compositions.
+
+The frontend-design guidance must always remain subordinate to:
+
+ui-system.yaml
+active visual style
+project architecture
+accessibility requirements
+
+# 11. COMPONENT FOUNDATION
+
+Read:
+
+components.foundation
+
+When the project uses:
+```text
+shadcn
+radix
+```
+prefer:
+```text
+Radix
+↓
+shadcn/ui
+↓
+Project Shared Components
+↓
+Feature Components
+↓
+Pages
+```
+Do not introduce another UI library when the configured component foundation already satisfies the requirement.
+
+# 12. COMPONENT REUSE
+
+Before creating a new component:
+
+Search the codebase.
+Inspect existing shared components.
+Inspect existing UI components.
+Inspect shadcn/ui components.
+Inspect Radix primitives.
+Determine whether an existing component can satisfy the requirement.
+Reuse or extend when appropriate.
 
 Avoid duplicate components.
 
----
+# 13. DESIGN TOKEN USAGE
 
-# 10. PAGE PATTERNS
+When visual tokens exist, consume them instead of duplicating their values.
 
-Before implementing a page:
+Prefer:
+```text
+semantic token
+↓
+shared component
+↓
+page
+```
+Avoid:
+```text
+page
+↓
+hardcoded colors
+↓
+hardcoded shadows
+↓
+hardcoded radius
+```
+Hardcoded values are allowed when defining the actual token system or when a legitimate isolated exception exists.
 
-1. Identify the page type.
-2. Find the closest existing page.
-3. Inspect its structure.
-4. Inspect its component composition.
-5. Inspect its responsive behavior.
-6. Reuse the pattern where appropriate.
+# 14. PAGE PATTERNS
 
-Do not make every new page a blank canvas.
+Before implementing a new page:
 
----
+Determine the page type.
+Inspect existing pages.
+Identify the closest reference.
+Inspect its structure.
+Inspect component composition.
+Inspect responsive behavior.
+Reuse the pattern where appropriate.
 
-# 11. REFERENCE PAGES
+Possible page types include:
 
-Reference pages represent existing product conventions.
+landing
+dashboard
+CRUD
+form
+detail
+search
+settings
+file manager
+report
+wizard
+custom
 
-Use them as evidence of:
+# 15. REFERENCE PAGES
 
-* visual identity
-* spacing rhythm
-* hierarchy
-* interaction patterns
-* component usage
+Use configured reference pages as evidence of:
 
-Do not blindly copy their business logic.
+visual identity
+component usage
+spacing rhythm
+hierarchy
+interaction patterns
+responsive behavior
 
----
+Do not blindly clone them.
 
-# 12. DESIGN DRIFT
+Reference pages are examples of the system in use.
+
+# 16. DESIGN DRIFT
 
 Look for:
 
-* arbitrary colors
-* arbitrary spacing
-* arbitrary radius
-* arbitrary shadows
-* inconsistent typography
-* duplicate components
-* inconsistent interactions
-* unrelated visual styles
+arbitrary colors
+arbitrary spacing
+arbitrary radius
+arbitrary shadows
+inconsistent typography
+duplicate components
+inconsistent interaction patterns
+unrelated visual styles
+unauthorized UI libraries
 
-Correct drift where appropriate.
+Correct meaningful drift where appropriate.
 
----
+# 17. PAGE-LEVEL DESIGN SYSTEMS
 
-# 13. ACCESSIBILITY
+Do not create a separate visual system inside a single page.
 
-Always preserve:
+Avoid page-level definitions of:
 
-* semantic HTML
-* keyboard navigation
-* visible focus
-* accessible labels
-* ARIA
-* contrast
-* reduced motion
-* responsive usability
+primary color
+typography system
+radius system
+elevation system
+button language
+card language
 
-Visual design must never override accessibility.
+When a requirement is genuinely reusable, extend the shared Design System instead.
 
----
+# 18. MAJOR UI WORKFLOW
 
-# 14. RESPONSIVE DESIGN
+For major UI:
 
-All UI work must consider:
-
-* mobile
-* tablet
-* desktop
-
-Use existing project breakpoint conventions.
-
-Do not create unrelated responsive systems.
-
----
-
-# 15. MAJOR UI WORKFLOW
-
-For major UI such as:
-
-* landing pages
-* dashboards
-* file managers
-* login pages
-* complex detail pages
+landing page
+dashboard
+file manager
+login
+document preview
+complex detail page
 
 use:
-
 ```text
 Understand
-→ Inspect
-→ Explore
-→ Brainstorm
-→ Select Direction
-→ Implement
-→ Self-Critique
-→ Audit
-→ Refine
+↓
+Inspect
+↓
+Explore
+↓
+Brainstorm
+↓
+Select Direction
+↓
+Implement
+↓
+Self-Critique
+↓
+Audit
+↓
+Refine
 ```
+Do not skip creative exploration when the page requires meaningful visual design.
 
-For small UI work use:
+# 19. SMALL UI WORKFLOW
 
+For small UI tasks:
 ```text
 Inspect
-→ Reuse
-→ Implement
-→ Audit
+↓
+Reuse
+↓
+Implement
+↓
+Audit
 ```
+Do not perform unnecessary design exploration for trivial changes.
 
----
+# 20. SELF-CRITIQUE
 
-# 16. SELF-CRITIQUE
+For major UI, ask:
 
-Before completing major UI work, evaluate:
+Genericness
 
-### Genericness
+Does the design look like a generic AI-generated interface?
 
-Does this look like a generic AI-generated interface?
+Product Specificity
 
-### Product Identity
+Does the design belong to this product?
 
-Does the visual language clearly belong to this product?
+Style Fidelity
 
-### Style Fidelity
+Does the implementation genuinely express the active visual style?
 
-Does it genuinely match the configured visual style?
+Consistency
 
-### Consistency
+Does it still feel like the same application?
 
-Does it feel related to the existing application?
+Usability
 
-### Usability
+Does the visual treatment improve understanding and interaction?
 
-Is visual creativity helping the user?
-
-### Restraint
+Restraint
 
 Can unnecessary decoration be removed?
 
----
+# 21. ACCESSIBILITY
 
-# 17. UI AUDIT
+Read:
+
+references/accessibility.md
+
+Accessibility must remain active regardless of visual style.
+
+Never sacrifice:
+
+semantic HTML
+keyboard navigation
+focus visibility
+accessible names
+contrast
+reduced motion
+responsive usability
+
+# 22. UX
+
+Read:
+
+references/ux-governance.md
+
+Use the project's UX guidance for:
+
+hierarchy
+terminology
+feedback
+loading
+empty states
+error states
+forms
+destructive actions
+navigation
+search
+filtering
+recovery
+
+# 23. VISUAL STYLE + UX
+
+Visual creativity must never obscure:
+
+content
+hierarchy
+action
+status
+navigation
+feedback
+
+A visually impressive interaction that users cannot understand is unsuccessful.
+
+# 24. RESPONSIVE DESIGN
+
+All UI work must consider:
+
+mobile
+tablet
+desktop
+
+Use project-established breakpoints.
+
+Do not create unrelated breakpoint systems.
+
+The visual style must remain coherent at every breakpoint.
+
+# 25. AUDIT
 
 For significant UI changes:
 
-1. Run the available UI audit process.
-2. Review Design System compliance.
-3. Review component reuse.
-4. Review responsive behavior.
-5. Review accessibility.
-6. Review visual drift.
-7. Fix significant findings.
+Run the UI audit process.
+Inspect Design System compliance.
+Inspect visual style fidelity.
+Inspect component reuse.
+Inspect UX.
+Inspect accessibility.
+Inspect responsiveness.
+Inspect design drift.
+Fix meaningful findings.
 
----
+# 26. PROJECT-SPECIFIC REFERENCES
 
-# 18. IMPORTANT PRINCIPLE
+When references are configured in ui-system.yaml, use them as project-local visual references.
 
-The project configuration defines the visual boundaries.
+Example:
 
-Within those boundaries, the agent is encouraged to make distinctive and intentional design decisions.
+references:
+  landing: "resources/js/pages/welcome.tsx"
+  dashboard: "resources/js/pages/dashboard.tsx"
 
-The goal is:
+Treat those files as examples of approved implementation.
 
-**Distinctive within the system.**
+Do not assume they are the only valid composition.
 
-Not:
+# 27. PROJECT-SPECIFIC ASSETS
 
-**Identical across every page.**
+When assets are configured:
 
----
+Use existing assets where appropriate.
 
-# 19. COMPLETION
+Do not recreate approved branding assets unnecessarily.
 
-Do not consider a UI task complete merely because it renders.
+Do not invent official logos or unsupported brand assets.
 
-A completed UI must satisfy:
+# 28. GOVERNANCE
 
-* functionality
-* configured design system
-* component reuse
-* responsive behavior
-* accessibility
-* visual consistency
-* appropriate creativity
-* relevant verification
+Read:
+
+governance
+
+Use the configured values to determine how strictly to enforce:
+
+reference-first
+component reuse
+UI audit
+no random colors
+no random shadows
+no random radius
+no page-specific design systems
+accessibility priority
+task scope
+
+# 29. FAILURE CONDITIONS
+
+The implementation should be considered unsuccessful when it:
+
+ignores the active visual style
+creates a new visual system without justification
+duplicates existing components unnecessarily
+breaks accessibility
+ignores configured project tokens
+introduces unrelated UI libraries
+creates major visual drift
+invents unsupported project-specific claims
+
+# 30. FINAL PRINCIPLE
+
+This system exists to achieve:
+
+Strong design system + controlled creativity + reusable components + excellent UX + accessibility.
+
+The agent should be:
+
+creative in expression, disciplined in system.
