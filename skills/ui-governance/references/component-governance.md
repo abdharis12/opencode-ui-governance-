@@ -28,8 +28,9 @@ Shared Project Component
 Feature Component
         ↓
 Page
-
+```
 For a typical React project:
+```text
 Radix UI
     ↓
 shadcn/ui
@@ -39,9 +40,10 @@ Project UI Components
 Feature Components
     ↓
 Pages
+```
 Do not bypass existing layers without a valid reason.
 
-2. SEARCH BEFORE CREATE
+# 2. SEARCH BEFORE CREATE
 
 Before creating a component:
 
@@ -55,7 +57,7 @@ Check similar pages.
 
 Only create a new component after determining that an existing component is not appropriate.
 
-3. REUSE BEFORE DUPLICATION
+# 3. REUSE BEFORE DUPLICATION
 
 Prefer existing components whenever the responsibility is the same.
 
@@ -83,7 +85,7 @@ ProductCard
 
 when no genuinely unique behavior exists.
 
-4. COMPONENT RESPONSIBILITY
+# 4. COMPONENT RESPONSIBILITY
 
 A component should have a clear responsibility.
 
@@ -98,7 +100,7 @@ persistence
 
 unless that composition is intentional and appropriate to the architecture.
 
-5. PRESENTATION VS BUSINESS LOGIC
+# 5. PRESENTATION VS BUSINESS LOGIC
 
 Presentation components should primarily manage presentation and interaction.
 
@@ -106,7 +108,7 @@ Business rules should remain in the appropriate application/domain layer.
 
 Avoid embedding complex business logic directly inside reusable UI components.
 
-6. VARIANTS BEFORE DUPLICATES
+# 6. VARIANTS BEFORE DUPLICATES
 
 When components share the same responsibility but require controlled visual or behavioral differences, prefer variants.
 
@@ -121,7 +123,7 @@ Button
 
 Do not create several components that differ only by styling.
 
-7. GLOBAL VS FEATURE COMPONENTS
+# 7. GLOBAL VS FEATURE COMPONENTS
 
 Use the following distinction:
 
@@ -130,7 +132,7 @@ Global Component
 Reusable across many domains.
 
 Examples:
-
+```text
 Button
 Card
 Dialog
@@ -138,7 +140,7 @@ Input
 Table
 Badge
 Application Component
-
+```
 Reusable within the application.
 
 Examples:
@@ -152,23 +154,23 @@ Feature Component
 Specific to a feature/domain.
 
 Examples:
-
+```text
 FilePreview
 FolderTree
 DocumentMetadata
 OrderSummary
 Page Component
-
+```
 Specific to one page's composition.
 
 A page component may use global, application, and feature components.
 
-8. VISUAL STYLING LOCATION
+# 8. VISUAL STYLING LOCATION
 
 Global visual decisions should be centralized.
 
 Prefer:
-
+```text
 Design Tokens
     ↓
 Foundation Component
@@ -176,7 +178,7 @@ Foundation Component
 Shared Component
     ↓
 Page
-
+```
 Avoid repeating global styling inside pages.
 
 Examples of values that should generally be centralized:
@@ -189,7 +191,8 @@ typography
 control heights
 spacing
 focus treatments
-9. DESIGN SYSTEM INTEGRATION
+
+# 9. DESIGN SYSTEM INTEGRATION
 
 Components must consume the project's Design System.
 
@@ -203,7 +206,7 @@ a shared component change
 
 before creating a page-specific override.
 
-10. SHADCN/UI GOVERNANCE
+# 10. SHADCN/UI GOVERNANCE
 
 When shadcn/ui is configured:
 
@@ -216,7 +219,7 @@ avoid unnecessary rewrites
 
 Do not replace shadcn components with another UI library merely for convenience.
 
-11. RADIX UI GOVERNANCE
+# 11. RADIX UI GOVERNANCE
 
 When Radix UI is configured:
 
@@ -231,7 +234,7 @@ interaction semantics
 
 Visual customization must not break Radix behavior.
 
-12. COMPONENT API
+# 12. COMPONENT API
 
 Shared component APIs should be:
 
@@ -243,7 +246,7 @@ minimally coupled
 
 Avoid unnecessary component-specific props that solve only one page's problem.
 
-13. CUSTOMIZATION
+# 13. CUSTOMIZATION
 
 Prefer composition over deeply specialized APIs.
 
@@ -264,7 +267,7 @@ SpecialCardWithHeaderAndActionAndBadgeAndFooter
 
 unless it represents a genuinely reusable domain concept.
 
-14. COMPONENT MODIFICATION
+# 14. COMPONENT MODIFICATION
 
 Before modifying a shared component:
 
@@ -277,7 +280,7 @@ Verify affected pages.
 
 Shared components should never be modified casually.
 
-15. BREAKING CHANGES
+# 15. BREAKING CHANGES
 
 A shared component change is considered high impact if it changes:
 
@@ -289,7 +292,7 @@ accessibility behavior
 
 Before making such a change, inspect its consumers.
 
-16. COMPONENT DISCOVERY
+# 16. COMPONENT DISCOVERY
 
 The agent should prefer the following discovery order:
 
@@ -307,7 +310,7 @@ Page-specific component
 
 Use the highest appropriate level.
 
-17. NEW COMPONENT DECISION
+# 17. NEW COMPONENT DECISION
 
 A new component is justified when at least one of these is true:
 
@@ -317,7 +320,8 @@ the composition is reused
 accessibility logic benefits from encapsulation
 the component represents an important domain concept
 the current abstraction would become misleading
-18. DUPLICATION DETECTION
+
+# 18. DUPLICATION DETECTION
 
 Look for duplication in:
 
@@ -331,7 +335,7 @@ error states
 
 Two components should be reviewed for consolidation when they perform substantially the same responsibility.
 
-19. PAGE-SPECIFIC OVERRIDES
+# 19. PAGE-SPECIFIC OVERRIDES
 
 Page-specific overrides are allowed when:
 
@@ -342,7 +346,7 @@ the override does not duplicate an existing global pattern
 
 Avoid page-level overrides for global visual decisions.
 
-20. COMPONENT STATES
+# 20. COMPONENT STATES
 
 Reusable interactive components should account for applicable states:
 
@@ -358,7 +362,7 @@ error
 
 Do not assume a component is complete after styling only its default state.
 
-21. RESPONSIVE COMPONENTS
+# 21. RESPONSIVE COMPONENTS
 
 Shared components should behave predictably across:
 
@@ -368,7 +372,7 @@ desktop
 
 Do not introduce component-specific breakpoint conventions without a valid reason.
 
-22. ACCESSIBILITY
+# 22. ACCESSIBILITY
 
 Reusable components must preserve:
 
@@ -381,7 +385,7 @@ sufficient contrast
 
 Accessibility is part of component quality.
 
-23. PERFORMANCE
+# 23. PERFORMANCE
 
 Avoid unnecessary:
 
@@ -393,7 +397,7 @@ expensive visual effects
 
 Component abstractions should remain practical.
 
-24. TESTING
+# 24. TESTING
 
 Where components contain meaningful interaction or behavior, use the project's established testing approach.
 
@@ -401,13 +405,13 @@ Prefer testing observable behavior over implementation details.
 
 Do not create unnecessary tests for trivial static markup when project conventions do not require them.
 
-25. DOCUMENTATION
+# 25. DOCUMENTATION
 
 Reusable components should have clear naming and predictable APIs.
 
 Do not create documentation files solely to document a trivial component unless project policy requires it.
 
-26. COMPONENT NAMING
+# 26. COMPONENT NAMING
 
 Names should describe responsibility.
 
@@ -425,7 +429,8 @@ CoolDialog
 NewCard2
 FinalButton
 CustomThing
-27. VISUAL CONSISTENCY
+
+# 27. VISUAL CONSISTENCY
 
 Two components with equivalent responsibilities should not have unrelated visual languages.
 
@@ -440,7 +445,7 @@ interaction language
 
 from the active Design System.
 
-28. DESIGN SYSTEM EXTENSION
+# 28. DESIGN SYSTEM EXTENSION
 
 When several components need the same new capability, consider extending the shared system.
 
@@ -454,7 +459,8 @@ Create custom styles in five pages.
 
 Better:
 Add a reusable surface token/variant.
-29. COMPONENT QUALITY CHECK
+
+# 29. COMPONENT QUALITY CHECK
 
 Before considering a component complete:
 
@@ -468,7 +474,8 @@ Before considering a component complete:
  Interaction states are handled.
  API is predictable.
  Shared styling is centralized where appropriate.
-30. FINAL PRINCIPLE
+
+# 30. FINAL PRINCIPLE
 
 The component system should make the application easier to evolve.
 
@@ -477,3 +484,4 @@ The best component is not the most abstract component.
 The best component is the smallest reusable abstraction that provides:
 
 clear responsibility + consistent design + accessible behavior + practical reuse.
+```
