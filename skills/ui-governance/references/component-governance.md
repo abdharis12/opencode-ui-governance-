@@ -484,4 +484,3 @@ The best component is not the most abstract component.
 The best component is the smallest reusable abstraction that provides:
 
 clear responsibility + consistent design + accessible behavior + practical reuse.
-```
