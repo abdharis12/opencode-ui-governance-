@@ -781,7 +781,8 @@ theme:
   colors:
 ```
 ```text
-Urutan yang saya sarankan sekarang
+## Urutan yang saya sarankan sekarang
+
 ✅ Repository dibuat
 ✅ Semua governance/reference file dibuat
 ✅ ui-system.yaml dibuat
