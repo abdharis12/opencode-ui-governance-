@@ -1,3 +1,35 @@
+# Instalasi Windows
+
+Setelah clone repository opencode-ui-governance. buat folder baru:
+Example :
+```text
+C:\Dev\tooling
+```
+Kemudian jika sudah miliki :
+```text
+skills/frontend-design/SKILL.md
+```
+jalankan:
+```text
+cd C:\Dev\tooling\opencode-ui-governance-
+```
+kemudian:
+```text
+.\install.ps1
+```
+Kalau execution policy:
+```text
+Set-ExecutionPolicy -Scope Process Bypass
+.\install.ps1
+```
+Setelah selesai:
+```text
+Get-Item "$HOME\.config\opencode\skills\ui-governance\SKILL.md"
+Get-Item "$HOME\.config\opencode\skills\frontend-design\SKILL.md"
+Get-Item "$HOME\.config\opencode\agents\ui-auditor.md"
+```
+Ketiganya harus ditemukan.
+
 # Tahap Instalasi dan Penggunaan di 3 OS.
 
 Saya sarankan satu prinsip:
