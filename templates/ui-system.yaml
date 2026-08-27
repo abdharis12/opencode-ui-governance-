@@ -1,33 +1,17 @@
+```yaml
 # ============================================================
-# UNIVERSAL UI SYSTEM CONFIGURATION
+# UNIVERSAL UI SYSTEM
 # ============================================================
-#
-# This file defines the UI/UX identity of an individual project.
-#
-# Copy this file to the root of a project as:
+# Copy this file to the ROOT of a project as:
 #
 #   ui-system.yaml
 #
-# The Global UI Governance Engine reads this file to determine:
+# This file defines PROJECT-SPECIFIC UI/UX decisions.
 #
-# - visual style
-# - secondary visual style
-# - theme
-# - typography
-# - layout
-# - component foundation
-# - creativity
-# - UX requirements
-# - reference pages
-# - governance behavior
-#
-# This file should contain PROJECT-SPECIFIC decisions only.
-#
-# Detailed design principles belong to the global UI Governance
-# reference files.
+# Global design knowledge is provided by the UI Governance
+# engine and its reference files.
 #
 # ============================================================
-
 
 version: 1
 
@@ -38,28 +22,14 @@ version: 1
 
 project:
 
-  # Human-readable project name.
   name: "Project Name"
 
-  # Short explanation of the product.
   description: "Project description"
 
-  # Product/domain category.
-  #
-  # Examples:
-  # - government-web-app
-  # - saas
-  # - e-commerce
-  # - internal-tool
-  # - education
-  # - healthcare
-  # - finance
   domain: "general"
 
-  # Primary audience.
   audience: "general users"
 
-  # Main interface language.
   language: "id"
 
 
@@ -69,53 +39,35 @@ project:
 
 visual:
 
-  # PRIMARY visual language.
+  # Primary visual language.
   #
-  # Examples:
-  # - claymorphism
-  # - minimalist
-  # - editorial
-  # - corporate
-  # - brutalist
-  # - glassmorphism
+  # Available global references may include:
   #
-  # The global governance engine uses the corresponding
-  # reference file:
+  # claymorphism
+  # minimalist
   #
-  # references/<style>.md
+  # Additional styles can be added to the global engine.
   style: "claymorphism"
 
 
   # Optional secondary visual language.
   #
   # Use "none" when not required.
-  #
-  # Example:
-  #
-  # Claymorphism + Glassmorphism
-  #
-  # Primary:
-  # claymorphism
-  #
-  # Secondary:
-  # glassmorphism
-  secondary_style: "glassmorphism"
+  secondary_style: "none"
 
 
   # Product personality.
   #
-  # These values influence the creative interpretation of the
-  # visual system.
-  #
   # Examples:
-  # - professional
-  # - modern
-  # - calm
-  # - bold
-  # - playful
-  # - institutional
-  # - premium
-  # - technical
+  #
+  # professional
+  # modern
+  # calm
+  # premium
+  # bold
+  # playful
+  # institutional
+  # technical
   personality:
     - professional
     - modern
@@ -128,20 +80,15 @@ visual:
 
   creativity:
 
-    # Recommended values:
-    #
     # conservative
     # moderate
     # bold
     level: "bold"
 
-    # Allow asymmetric layouts.
     allow_asymmetry: true
 
-    # Allow deliberate visual experimentation.
     allow_visual_risk: true
 
-    # Encourage a memorable visual signature on major pages.
     signature_element: true
 
 
@@ -151,8 +98,6 @@ visual:
 
 theme:
 
-  # Supported conceptual modes:
-  #
   # light
   # dark
   # system
@@ -160,49 +105,55 @@ theme:
 
 
   # ==========================================================
-  # SEMANTIC COLORS
+  # COLORS
   # ==========================================================
-  #
-  # These are PROJECT values.
-  #
-  # The global design system determines HOW they are used.
-  # The project decides WHICH colors are used.
-  #
 
   colors:
 
     primary: "#000000"
+
     primary_foreground: "#FFFFFF"
 
     secondary: "#000000"
+
     secondary_foreground: "#FFFFFF"
 
     background: "#FFFFFF"
+
     foreground: "#111111"
 
     surface: "#FFFFFF"
+
     surface_elevated: "#FFFFFF"
 
     muted: "#F5F5F5"
+
     muted_foreground: "#666666"
 
     accent: "#000000"
+
     accent_foreground: "#FFFFFF"
 
     border: "#DDDDDD"
+
     input: "#DDDDDD"
+
     ring: "#000000"
 
     success: "#16A34A"
+
     success_foreground: "#FFFFFF"
 
     warning: "#CA8A04"
+
     warning_foreground: "#FFFFFF"
 
     destructive: "#DC2626"
+
     destructive_foreground: "#FFFFFF"
 
     info: "#2563EB"
+
     info_foreground: "#FFFFFF"
 
 
@@ -212,19 +163,18 @@ theme:
 
   typography:
 
-    # Primary font family.
     font_family: ""
 
-    # Optional display font.
     display_family: ""
 
-    # Optional body font.
     body_family: ""
 
-    # Weight system.
     display_weight: 700
+
     heading_weight: 600
+
     body_weight: 400
+
     label_weight: 500
 
 
@@ -234,8 +184,6 @@ theme:
 
   spacing:
 
-    # Recommended:
-    #
     # compact
     # comfortable
     # relaxed
@@ -248,8 +196,6 @@ theme:
 
   radius:
 
-    # Recommended:
-    #
     # none
     # small
     # medium
@@ -264,8 +210,6 @@ theme:
 
   elevation:
 
-    # Recommended:
-    #
     # none
     # subtle
     # medium
@@ -279,32 +223,23 @@ theme:
 
   clay:
 
-    # Enable or disable Claymorphism-specific treatment.
     enabled: true
 
-    # Recommended:
-    #
     # subtle
     # medium
     # strong
     intensity: "medium"
 
-    # Prefer matte surfaces.
     matte: true
 
-    # Use diffuse lighting principles.
     diffuse_lighting: true
 
-    # Use subtle highlight treatment.
     highlights: true
 
-    # Use soft shadow treatment.
     soft_shadows: true
 
-    # Allow recessed/inset surfaces.
     inset_depth: true
 
-    # Allow tactile pressed states.
     pressed_state: true
 
 
@@ -314,29 +249,21 @@ theme:
 
   glass:
 
-    # Enable only if secondary_style requires it.
-    enabled: true
+    enabled: false
 
-    # Recommended:
-    #
     # subtle
     # medium
     # strong
     intensity: "subtle"
 
-    # Recommended:
-    #
     # none
     # small
     # medium
     # large
     blur: "medium"
 
-    # Approximate surface opacity.
     opacity: 0.65
 
-    # Recommended:
-    #
     # none
     # subtle
     # medium
@@ -349,27 +276,15 @@ theme:
 
 components:
 
-  # Component foundation used by the project.
-  #
-  # Common values:
-  #
-  # - shadcn
-  # - radix
-  # - native
-  # - custom
   foundation:
+
     - "shadcn"
     - "radix"
 
 
-  # Reuse existing components whenever possible.
   reuse_existing: true
 
 
-  # Preferred UI components.
-  #
-  # This is advisory configuration, not a requirement to install
-  # every component.
   preferred:
 
     - "Button"
@@ -398,41 +313,26 @@ components:
 
 ux:
 
-  # Responsive UI is mandatory.
   responsive: true
 
-  # Prefer mobile-first implementation.
   mobile_first: true
 
-  # Accessibility expectation.
-  #
-  # Recommended:
-  #
   # relaxed
   # standard
   # strict
   accessibility: "strict"
 
-  # Support reduced motion.
   reduced_motion: true
 
 
-  # ==========================================================
-  # INTERACTION
-  # ==========================================================
-
   interaction:
 
-    # Prefer tactile interaction when supported by visual style.
     tactile: true
 
-    # Provide feedback for meaningful actions.
     feedback: true
 
-    # Use hover interactions where appropriate.
     hover_feedback: true
 
-    # Use visible focus.
     focus_visible: true
 
 
@@ -440,13 +340,15 @@ ux:
 # REFERENCE PAGES
 # ============================================================
 #
-# These point to existing pages inside the current project.
+# Use paths relative to the project root.
 #
-# They provide evidence of the project's established visual and
-# interaction language.
+# Example:
 #
-# Do not use references as exact templates.
+# landing:
+#   resources/js/pages/welcome.tsx
 #
+# References should point to APPROVED pages.
+# ============================================================
 
 references:
 
@@ -468,40 +370,32 @@ references:
 
 
 # ============================================================
-# BRAND / ASSETS
+# PROJECT ASSETS
 # ============================================================
 
 assets:
 
-  # Main product logo.
   logo: ""
 
-  # Optional brand mark.
   brand_mark: ""
 
-  # Optional organization logo.
   organization_logo: ""
 
-  # Optional favicon.
   favicon: ""
 
 
 # ============================================================
-# CONTENT / DOMAIN
+# CONTENT
 # ============================================================
 
 content:
 
-  # Language style.
-  #
-  # Examples:
-  # - formal
-  # - professional
-  # - conversational
-  # - institutional
+  # formal
+  # professional
+  # conversational
+  # institutional
   tone: "professional"
 
-  # Avoid invented product claims.
   factual_claims_only: true
 
 
@@ -511,30 +405,26 @@ content:
 
 governance:
 
-  # Always inspect existing UI before creating new UI.
   reference_first: true
 
-  # Prefer reusable components.
   reuse_components: true
 
-  # Run UI audit after significant UI changes.
   audit_after_ui_task: true
 
-  # Do not silently introduce another design system.
   no_unapproved_design_system: true
 
-  # Prevent arbitrary visual values when semantic tokens exist.
   no_random_colors: true
+
   no_random_radius: true
+
   no_random_shadows: true
+
   no_random_typography: true
+
   no_random_spacing: true
 
-  # Prevent page-specific design systems.
   no_page_specific_design_system: true
 
-  # Preserve accessibility even when creative freedom is enabled.
   accessibility_over_visual_effects: true
 
-  # Avoid modifying unrelated features.
   limit_task_scope: true
