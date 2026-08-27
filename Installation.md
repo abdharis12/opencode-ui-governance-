@@ -769,9 +769,9 @@ Ini akan mencegah typo seperti:
 ```text
 visual:
   style: claymorphism
-
+```
 tetapi salah:
-
+```text
 theme:
   color:
 ```
@@ -779,12 +779,14 @@ padahal engine mengharapkan:
 ```text
 theme:
   colors:
+```
+```text
 Urutan yang saya sarankan sekarang
 ✅ Repository dibuat
 ✅ Semua governance/reference file dibuat
 ✅ ui-system.yaml dibuat
 ✅ ui-auditor dibuat
-```
+
 NEXT:
 
 1. Tambahkan install.ps1
@@ -795,7 +797,7 @@ NEXT:
 6. Install/test frontend-design
 7. Test dengan Driveku
 8. Test project kedua dengan Minimalist
-
+```
 Yang jangan dilakukan dulu adalah meng-copy seluruh repository ke setiap Laravel project. Cukup install engine secara global sekali per komputer, lalu setiap project memiliki satu ui-system.yaml sebagai identitas desainnya.
 
 Dan karena Anda bekerja di tiga OS, model Git repository + installer per OS jauh lebih aman daripada mencoba menyinkronkan C:\Users\DELL\.config\opencode secara langsung. OpenCode sendiri memang menyediakan global skill location dan project-local overrides, sehingga model ini sesuai dengan mekanisme discovery-nya.
