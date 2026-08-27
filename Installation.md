@@ -30,6 +30,35 @@ Get-Item "$HOME\.config\opencode\agents\ui-auditor.md"
 ```
 Ketiganya harus ditemukan.
 
+# Hasil akhir di komputer Windows
+```text
+C:\Users\DELL\.config\opencode\
+│
+├── skills\
+│   │
+│   ├── ui-governance\
+│   │   ├── SKILL.md
+│   │   └── references\
+│   │       ├── claymorphism.md
+│   │       ├── minimalist.md
+│   │       ├── frontend-design.md
+│   │       ├── component-governance.md
+│   │       ├── ux-governance.md
+│   │       └── accessibility.md
+│   │
+│   └── frontend-design\
+│       ├── SKILL.md
+│       └── LICENSE.txt
+│
+├── agents\
+│   └── ui-auditor.md
+│
+├── node_modules\
+├── opencode.json
+├── opencode.jsonc
+├── package.json
+└── ...
+```
 # Tahap Instalasi dan Penggunaan di 3 OS.
 
 Saya sarankan satu prinsip:
