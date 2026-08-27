@@ -300,7 +300,7 @@ Radix UI
 other approved component foundations
 
 For projects using shadcn and Radix:
-
+```text
 Radix
 ↓
 shadcn/ui
@@ -310,7 +310,7 @@ Project Components
 Feature Components
 ↓
 Pages
-
+```
 Reuse existing components before creating new ones.
 
 # 14. UI AUDIT
@@ -320,7 +320,7 @@ The repository provides:
 agents/ui-auditor.md
 
 The UI auditor checks:
-
+```text
 design system compliance
 visual style
 color
@@ -333,7 +333,7 @@ UX
 accessibility
 responsive behavior
 design drift
-
+```
 The goal is not to make every page identical.
 
 The goal is to preserve the product's design language.
@@ -343,7 +343,7 @@ The goal is to preserve the product's design language.
 OpenCode can discover global skills from its global configuration directory.
 
 Typical structure:
-
+```text
 ~/.config/opencode/
 ├── skills/
 │   └── ui-governance/
@@ -352,11 +352,11 @@ Typical structure:
 │
 └── agents/
     └── ui-auditor.md
-
+```
 On Windows, the equivalent commonly resolves under:
-
+```text
 %USERPROFILE%\.config\opencode\
-
+```
 # 16. MULTI-OS USAGE
 
 This repository is designed to be shared through Git.
@@ -364,13 +364,13 @@ This repository is designed to be shared through Git.
 Do not synchronize the entire OpenCode configuration directory between operating systems.
 
 Instead:
-
+```text
 Git Repository
       │
       ├── Windows
       ├── Linux
       └── macOS
-
+```
 Each operating system maintains its own local OpenCode configuration.
 
 The governance repository remains the shared source.
