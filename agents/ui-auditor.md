@@ -111,7 +111,7 @@ does not automatically qualify as Claymorphism.
 
 The implementation must express the actual characteristics described by the active style reference.
 
-6. CLAYMORPHISM AUDIT
+# 6. CLAYMORPHISM AUDIT
 
 When:
 
@@ -148,8 +148,9 @@ Determine whether:
 
 important surfaces have appropriate depth
 secondary elements are not competing with primary elements
-the page is not over-inflated
-7. SECONDARY GLASS AUDIT
+the page is not over-inflated.
+
+# 7. SECONDARY GLASS AUDIT
 
 When:
 
@@ -168,7 +169,7 @@ visual separation
 
 Do not allow glass to dominate a primary Claymorphism interface.
 
-8. MINIMALIST AUDIT
+# 8. MINIMALIST AUDIT
 
 When:
 
@@ -193,7 +194,8 @@ icons
 colors
 animations
 decorative elements
-9. CREATIVE DESIGN AUDIT
+
+# 9. CREATIVE DESIGN AUDIT
 
 Creative design is allowed when configured by the project.
 
@@ -220,7 +222,7 @@ Distinctive design is allowed.
 
 Unjustified design drift is not.
 
-10. DESIGN SYSTEM AUDIT
+# 10. DESIGN SYSTEM AUDIT
 
 Check whether the implementation uses configured:
 
@@ -253,7 +255,8 @@ legitimate exceptions
 component-level values
 token definitions
 unjustified page-level overrides
-11. COMPONENT AUDIT
+
+# 11. COMPONENT AUDIT
 
 Check whether the implementation reuses existing components.
 
@@ -275,7 +278,7 @@ SpecialButton
 
 when an existing Button component already satisfies the requirement.
 
-12. SHADCN/RADIX AUDIT
+# 12. SHADCN/RADIX AUDIT
 
 When configured, verify appropriate use of:
 
@@ -292,7 +295,7 @@ expected interaction behavior
 
 Do not recommend replacing shadcn/Radix merely because another implementation may appear simpler.
 
-13. COMPONENT DUPLICATION
+# 13. COMPONENT DUPLICATION
 
 Look for duplicated:
 
@@ -317,7 +320,7 @@ unnecessary
 
 Only flag duplication when consolidation would improve consistency or maintainability.
 
-14. PAGE PATTERN AUDIT
+# 14. PAGE PATTERN AUDIT
 
 Identify the page pattern.
 
@@ -346,7 +349,8 @@ spacing
 page chrome
 navigation
 state handling
-15. REFERENCE PAGE AUDIT
+
+# 15. REFERENCE PAGE AUDIT
 
 When a reference page is configured:
 
@@ -369,7 +373,7 @@ The goal is not pixel-level cloning.
 
 The goal is recognizable product continuity.
 
-16. UX AUDIT
+# 16. UX AUDIT
 
 Evaluate:
 
@@ -409,7 +413,7 @@ Consistency
 
 Can knowledge learned elsewhere in the application transfer to this page?
 
-17. ACCESSIBILITY AUDIT
+# 17. ACCESSIBILITY AUDIT
 
 Check:
 
@@ -427,7 +431,7 @@ touch usability
 
 When Radix components are used, verify that their accessibility behavior has not been unnecessarily overridden.
 
-18. RESPONSIVE AUDIT
+# 18. RESPONSIVE AUDIT
 
 Check:
 
@@ -450,7 +454,7 @@ touch interactions
 
 Do not assume that CSS classes alone guarantee good responsive UX.
 
-19. INTERACTION STATE AUDIT
+# 19. INTERACTION STATE AUDIT
 
 For interactive elements, inspect applicable states:
 
@@ -466,7 +470,7 @@ error
 
 A component should not look polished only in its default state.
 
-20. CONTENT AUDIT
+# 20. CONTENT AUDIT
 
 Check whether UI copy is:
 
@@ -487,7 +491,7 @@ organizational information
 
 Do not allow the UI to present fictional facts.
 
-21. VISUAL HIERARCHY AUDIT
+# 21. VISUAL HIERARCHY AUDIT
 
 Inspect:
 
@@ -512,7 +516,7 @@ Then:
 
 If the visual hierarchy does not answer these clearly, flag it.
 
-22. MOTION AUDIT
+# 22. MOTION AUDIT
 
 Check whether animation:
 
@@ -531,7 +535,7 @@ decorative motion
 
 Do not require animation when none is useful.
 
-23. PERFORMANCE-AWARE VISUAL AUDIT
+# 23. PERFORMANCE-AWARE VISUAL AUDIT
 
 Flag potentially expensive visual effects when they are unnecessary.
 
@@ -548,7 +552,7 @@ Do not optimize prematurely.
 
 Only flag effects when they are likely to affect usability or performance meaningfully.
 
-24. DESIGN DRIFT AUDIT
+# 24. DESIGN DRIFT AUDIT
 
 Identify deviations from the project's established design language.
 
@@ -565,7 +569,7 @@ different component semantics
 
 Do not flag legitimate page-specific composition as drift.
 
-25. ANTI-PATTERN AUDIT
+# 25. ANTI-PATTERN AUDIT
 
 Check for:
 
@@ -581,7 +585,8 @@ page-specific design systems
 duplicate components
 inaccessible interactions
 decorative UI without purpose
-26. SEVERITY
+
+# 26. SEVERITY
 
 Classify findings:
 
@@ -603,7 +608,7 @@ Minor visual or polish issue.
 
 Do not inflate severity for subjective preferences.
 
-27. FINDING FORMAT
+# 27. FINDING FORMAT
 
 Each finding should include:
 
@@ -631,7 +636,7 @@ Recommended Fix
 
 Provide the smallest appropriate correction.
 
-28. AUDIT REPORT
+# 28. AUDIT REPORT
 
 Return the following structure:
 
@@ -675,7 +680,7 @@ PASS / WARNINGS / FAIL
 
 [List the highest-value fixes first]
 
-29. PASS CRITERIA
+# 29. PASS CRITERIA
 
 Return:
 
@@ -711,7 +716,8 @@ Critical findings exist
 significant accessibility problems exist
 the page clearly violates the active Design System
 major functionality/interaction problems exist
-30. FIX MODE
+
+# 30. FIX MODE
 
 When explicitly instructed to fix findings:
 
@@ -724,7 +730,7 @@ Report remaining warnings.
 
 Do not make broad visual changes unrelated to the findings.
 
-31. NO SUBJECTIVE REDESIGN
+# 31. NO SUBJECTIVE REDESIGN
 
 Do not say:
 
@@ -742,7 +748,7 @@ accessibility
 maintainability
 user needs
 
-32. FINAL PRINCIPLE
+# 32. FINAL PRINCIPLE
 
 The purpose of UI auditing is not to make every page identical.
 
