@@ -349,3 +349,182 @@ Clay background/surface
 Clay component
         ↓
 Optional floating glass layer
+
+Glass should be used to communicate:
+
+floating context
+overlay
+secondary information
+transient UI
+
+Do not convert the entire interface into transparent glass panels.
+
+16. COLOR
+
+Claymorphism does not define a specific color palette.
+
+Use the project's configured semantic colors.
+
+Pastel palettes are compatible with Claymorphism when configured, but they are not mandatory.
+
+Color should reinforce material hierarchy rather than replace it.
+
+17. TYPOGRAPHY
+
+Typography remains controlled by the project's typography system.
+
+Claymorphism does not justify:
+
+decorative fonts
+excessive text effects
+arbitrary font weights
+unusual type scaling
+
+Visual personality should primarily come from:
+
+surface treatment
+hierarchy
+composition
+depth
+spacing
+18. SPACING
+
+Claymorphism benefits from comfortable spacing.
+
+Prefer:
+
+clear separation between surfaces
+sufficient breathing room
+consistent component padding
+deliberate grouping
+
+Avoid:
+
+cramped controls
+excessive surface nesting
+unnecessary whitespace that weakens information hierarchy
+19. COMPONENT DENSITY
+
+Not every element needs strong Clay treatment.
+
+Recommended hierarchy:
+
+Strong Clay
+
+Use for:
+
+primary cards
+primary actions
+important widgets
+major product objects
+Medium Clay
+
+Use for:
+
+standard cards
+controls
+forms
+panels
+Subtle Clay
+
+Use for:
+
+small controls
+badges
+secondary navigation
+utility elements
+
+This prevents the interface from becoming visually noisy.
+
+20. VISUAL BOUNDARIES
+
+A Claymorphic interface should not become:
+
+childish
+toy-like
+cartoonish
+overly inflated
+excessively playful
+
+Softness should coexist with professional hierarchy.
+
+21. MOTION
+
+Motion should reinforce tactile interaction.
+
+Prefer:
+
+subtle elevation changes
+soft press feedback
+restrained entrance transitions
+gentle surface movement
+
+Avoid:
+
+excessive bouncing
+continuous floating
+dramatic spring effects
+animation for decoration alone
+
+Respect reduced-motion preferences.
+
+22. RESPONSIVE BEHAVIOR
+
+Claymorphism must remain usable across:
+
+mobile
+tablet
+desktop
+
+On smaller screens:
+
+simplify unnecessary decorative depth
+reduce visual clutter
+maintain tactile controls
+preserve hierarchy
+
+Do not allow shadows, blur, or floating effects to compromise usability.
+
+23. ACCESSIBILITY
+
+Claymorphism must never compromise:
+
+contrast
+focus visibility
+keyboard navigation
+readable typography
+semantic structure
+accessible states
+
+A visual effect is invalid if it makes the interface harder to use.
+
+24. ANTI-PATTERNS
+
+Avoid:
+
+rounded rectangles + shadow only
+hard black shadows
+extreme 3D
+glossy plastic
+excessive highlights
+excessive gradients
+excessive surface nesting
+identical elevation on every component
+excessive blur
+decorative depth with no purpose
+visual effects that obscure content
+25. QUALITY TEST
+
+A successful Claymorphic interface should immediately communicate:
+
+soft + tactile + sculpted + volumetric + matte
+
+If the interface still looks like a standard flat UI with rounded corners and shadows, the Claymorphism treatment is insufficient.
+
+26. DESIGN PRINCIPLE
+
+Use Claymorphism to make the interface feel:
+
+physically tangible without becoming physically distracting.
+
+The material should support the product, hierarchy, and interaction—not replace them.
